@@ -1,4 +1,3 @@
-# hello
 from googlesearch import search 
 import speech_recognition as sr
 import os
