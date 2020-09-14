@@ -37,11 +37,11 @@ from email.mime.text import MIMEText
 import lxml
 import subprocess
 import time
-import selenium.webdriver as webdriver
-import selenium.webdriver.support.ui as ui
-from selenium.webdriver.common.keys import Keys
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
+# import selenium.webdriver as webdriver
+# import selenium.webdriver.support.ui as ui
+# from selenium.webdriver.common.keys import Keys
+# from selenium import webdriver
+# from selenium.webdriver.common.keys import Keys
 
 
 global songUrlSave
