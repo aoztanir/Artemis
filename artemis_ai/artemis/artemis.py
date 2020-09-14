@@ -11,7 +11,7 @@ from pyowm import OWM
 import youtube_dl
 # import vlc
 import urllib
-import urllib2
+# import urllib2
 import json
 from bs4 import BeautifulSoup as soup
 from urllib2 import urlopen
