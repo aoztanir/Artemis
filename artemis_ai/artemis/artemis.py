@@ -68,7 +68,7 @@ counter = 0
 
 r = sr.Recognizer()
 converter = pyttsx3.init() 
-converter.setProperty('rate', 205) 
+converter.setProperty('rate', 180) 
 converter.setProperty('volume', 1) 
 
 
