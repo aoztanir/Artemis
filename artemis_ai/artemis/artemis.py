@@ -250,7 +250,7 @@ def assistant(command):
                 x = w.get_temperature(unit='fahrenheit')
                 artemisResponse('Current weather in %s is %s. The maximum temperature is %0.2f degrees Fahrenheit and the minimum temperature is %0.2f degrees Fahrenheit Sir' % (city, k, x['temp_max'], x['temp_min']))
         
-        if ' time ' in command:
+        if ' time' in command:
             if askCount == 1:
                 return
             askCount = 1
