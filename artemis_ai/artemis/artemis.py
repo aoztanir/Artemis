@@ -76,28 +76,33 @@ counter=0
 #t -> s
 def myCommand():
     # while True:
-    r = sr.Recognizer()
-    with sr.Microphone() as source:
-        r.pause_threshold = 1
-        r.adjust_for_ambient_noise(source, duration=0.1)
-        audio = r.listen(source)
-        try:
-            command = r.recognize_google(audio).lower()
-            print('You said: ' + command + '\n')
-            #loop back to continue to listen for commands if unrecognizable speech is received
-        except sr.UnknownValueError:
-            command = myCommand();
+    if silentMode == False:
+        r = sr.Recognizer()
+        with sr.Microphone() as source:
+            r.pause_threshold = 1
+            r.adjust_for_ambient_noise(source, duration=0.1)
+            audio = r.listen(source)
+            try:
+                command = r.recognize_google(audio).lower()
+                print('You said: ' + command + '\n')
+                #loop back to continue to listen for commands if unrecognizable speech is received
+            except sr.UnknownValueError:
+                command = myCommand();
 
-        if 'stop' in command:
-            browser= webdriver.Chrome("/Users/apple/Desktop/artemis_ai/artemis/chromeDri")
-            browser.get(songUrlSave)
-            browser.close()
-            elem = browser.find_element_by_tag_name("body")
-            elem.send_keys(Keys.CONTROL+"w") 
-            artemisResponse('Stopping Sir')
-            # quitStatus = 1
-            return
-        return command    
+            if 'stop' in command:
+                browser= webdriver.Chrome("/Users/apple/Desktop/artemis_ai/artemis/chromeDri")
+                browser.get(songUrlSave)
+                browser.close()
+                elem = browser.find_element_by_tag_name("body")
+                elem.send_keys(Keys.CONTROL+"w") 
+                artemisResponse('Stopping Sir')
+                # quitStatus = 1
+                return
+        return command 
+    else:
+        command = input("Type:     ")
+    return command
+        
         
 # stopThread = threading.Thread(target = stopFunc(myCommand()))
 #s -> t
