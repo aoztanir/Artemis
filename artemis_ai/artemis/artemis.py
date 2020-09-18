@@ -76,6 +76,7 @@ converter.setProperty('volume', 1)
 counter=0
 #t -> s
 def myCommand():
+    silentMode=True
     # while True:
     if silentMode == False:
         r = sr.Recognizer()
