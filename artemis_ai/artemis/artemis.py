@@ -43,6 +43,7 @@ import time
 # from selenium import webdriver
 # from selenium.webdriver.common.keys import Keys
 
+silentMode = True
 
 global songUrlSave
 songUrlSave=''
@@ -99,7 +100,7 @@ def myCommand():
                 # quitStatus = 1
                 return
         return command 
-    else:
+    elif silentMode == True:
         command = input("Type:     ")
     return command
         
